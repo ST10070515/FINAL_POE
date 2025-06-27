@@ -1,0 +1,87 @@
+
+
+Ideally userq and response methods target keyword rec and random responses
+
+hypothized sequence to run code according to list of tasks is part two numerically is 4,1,2,5,3,6,7
+
+part 2
+
+In a new class
+The class consists of 3 or 4 functions
+The class will make use of generic collections and deligates
+
+
+
+*The first "Topic Defenition" the second is "Coversation structure" the third being "Random generator" and the fourth "dialogue", fifth sentiment detection, sixth memory.
+*within this class account for conversational flow, and random coversation generator.
+*Idea is to have a form of generic collection that will store predifined topics
+
+
+--->user input
+
+
+
+--->Program logic 
+1. we start by prompting user for input.
+2.Their input is matched if it found inside "Topic Defenition".
+3.If it doenst match Topic defenition run to dialogue.
+4.if "Coversation structure" is triggered.
+5.Memory will always be triggred and capture weather based on the result of the three conversation structure, dialogue, random generator.
+6.memory is going act as a displayer, by outputing results from the other modules as it is the last. 
+7.After
+
+
+--->Topic defenition
+*This function will focus on  
+*Define topics and their defenition
+*it will take user input and match it with the predefined topics if no match run dialogue method.
+{will handle key word recognition }
+*predefined topics will be password, scam, privacy 
+
+
+
+--->Coversation structure
+*conversation should look at user input and try to find or look out for (what, why, when, who, why,how)
+*it will consist of a dictionary acc
+*this will consist of static responses for each topic which the responses will be the same everytime for each there should be an answer or case to account for (who,what,when,why,how).
+*
+
+
+--->Random generator
+*this will also use user input
+*this will use a dictionary or switch.
+*Random responses that are relevant or related to the user input.
+
+
+--->dialogue
+*Dialogue is going to catch out of bounds and handle all errors that  from inside or do not adhere to "Coversation structure" and "Random generator"
+*Dialogue will respectively loop if an error is encounted or prompt user to terminate the program.
+
+--->sentiment detection
+*this function will detect sentiments
+
+--->memory
+*memory will be a counter and count how many time a topic is met from inside topic defenition to analyze how frequent and quickly each topic is accessed or visited
+*keep a counter for every conclusion
+*this will be where displays are formulated 
+
+final 
+2 classes 
+program class which part 1
+cyberchatbot class which implements part 2
+
+the two integrated in thw sense that program has amenu of option and an patricular option from program.phase2 triggers cyberchatbot class
+the cyberchatbot class actually focuvses on all spects and tasks of part2 POE
+
+
+prompts inside
+originally user input is captured an used mostly
+to see memory you have to use "stats" or "memory"
+
+PART 3 POE POE
+•The GUI interface is called from the console app, by going through the whole program consisting of part one and two.
+•To view and engage with part 3 POE you need to select option 5 "Start A Quiz" which I've highlighted.
+•Upon selecting option 5 the GUI interface will launch and you will be able to use it to create tasks, play a quiz game, talk to a chat bot about atleast three cyber topics
+And an activity log to account for all activities including results of the quiz
+
+•The intergration of the POE to The console app part 1 and part 2, is I have a POE project that uses XAML but i use its .exe to call it inside the console app.

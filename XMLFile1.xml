@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="POE_POE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:POE_POE"
+        Title="Cybersecurity Awareness Chatbot"
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
+
+	<Window.Resources>
+
+		<Style x:Key="TextBoxStyle" TargetType="TextBox">
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Margin" Value="5"/>
+			<Setter Property="Padding" Value="5"/>
+
+		</Style>
+		<Style x:Key="LabelStyle" TargetType="Label">
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Margin" Value="5"/>
+		</Style>
+
+		<Style x:Key="ButtonStyle" TargetType="Button">
+			<Setter Property="Background" Value="#4CAF50"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontSize" Value="14"/>
+			<Setter Property="Padding" Value="10"/>
+			<Setter Property="Margin" Value="5"/>
+		</Style>
+	</Window.Resources>
+
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+
+		<Label Grid.Row="0" Content="Cybersecurity Awareness Chatbot" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+
+
+		<Grid Grid.Row="1" Margin="0,10,0,10">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+
+			<StackPanel Grid.Column="0">
+				<Label Content="Chat with Bot" Style="{StaticResource LabelStyle}" />
+				<TextBox x:Name="ChatInput" Height="40" Style="{StaticResource TextBoxStyle}" AcceptsReturn="True" />
+				<Button x:Name="SendButton" Content="Send" Style="{StaticResource ButtonStyle}" Click="SendButton_Click"/>
+				<TextBox x:Name="ChatOutput" Height="150" Style="{StaticResource TextBoxStyle}" IsReadOnly="True" TextWrapping="Wrap"/>
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="1">
+
+				<GroupBox Header="Task Assistant" Margin="5">
+					<StackPanel>
+						<Label Content="Task Title:" Style="{StaticResource LabelStyle}" />
+						<TextBox x:Name="TaskTitle"  Style="{StaticResource TextBoxStyle}" />
+
+						<Label Content="Task Description:" Style="{StaticResource LabelStyle}" />
+						<TextBox x:Name="TaskDescription"  Style="{StaticResource TextBoxStyle}" />
+
+						<Label Content="Reminder (e.g., 3 days):" Style="{StaticResource LabelStyle}" />
+						<TextBox x:Name="TaskReminder"  Style="{StaticResource TextBoxStyle}" />
+
+						<Button x:Name="AddTaskButton" Content="Add Task" Style="{StaticResource ButtonStyle}" Click="AddTaskButton_Click"/>
+						<ListBox x:Name="TaskList" Height="100"/>
+					</StackPanel>
+				</GroupBox>
+
+
+				<GroupBox Header="Activity Log" Margin="5">
+					<StackPanel>
+						<ListBox x:Name="ActivityLog" Height="100"/>
+						<Button x:Name="ShowLogButton" Content="Refresh Log" Style="{StaticResource ButtonStyle}" Click="ShowLogButton_Click"/>
+					</StackPanel>
+				</GroupBox>
+			</StackPanel>
+		</Grid>
+
+		<StackPanel Grid.Row="2" Margin="5">
+			<Label Content="Cybersecurity Quiz" Style="{StaticResource LabelStyle}" />
+			<TextBox x:Name="QuizQuestion" IsReadOnly="True" Style="{StaticResource TextBoxStyle}" TextWrapping="Wrap"/>
+			<UniformGrid Columns="2" Rows="2" Margin="0,5">
+				<Button x:Name="QuizOption1" Content="Option 1" Style="{StaticResource ButtonStyle}" Click="QuizOption_Click"/>
+				<Button x:Name="QuizOption2" Content="Option 2" Style="{StaticResource ButtonStyle}" Click="QuizOption_Click"/>
+				<Button x:Name="QuizOption3" Content="Option 3" Style="{StaticResource ButtonStyle}" Click="QuizOption_Click"/>
+				<Button x:Name="QuizOption4" Content="Option 4" Style="{StaticResource ButtonStyle}" Click="QuizOption_Click"/>
+			</UniformGrid>
+			<Button x:Name="StartQuizButton" Content="Start Quiz" Style="{StaticResource ButtonStyle}" Click="StartQuizButton_Click"/>
+			<ProgressBar x:Name="QuizProgress" Height="20" Maximum="100" Value="0" Margin="5"/>
+			<TextBox x:Name="QuizResult" IsReadOnly="True" Style="{StaticResource TextBoxStyle}"/>
+		</StackPanel>
+	</Grid>
+</Window>
